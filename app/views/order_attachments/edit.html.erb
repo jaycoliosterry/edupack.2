@@ -1,6 +1,5 @@
-<h1>Editing order_attachment</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @order_attachment %> |
-<%= link_to 'Back', order_attachments_path %>
+<%- model_class = OrderAttachment -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => OrderAttachment %></h1>
+</div>
+<%= render :partial => 'form' %>
