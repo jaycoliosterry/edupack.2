@@ -1,0 +1,23 @@
+<%= simple_form_for(@invoice) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :order_refs %>
+    <%= f.input :total_cost %>
+    <%= f.input :invoice_number %>
+    <%= f.input :date_issued %>
+    <%= f.input :date_due %>
+    <%= f.input :status %>
+    <%= f.input :tax %>
+    <%= f.input :sent %>
+    <%= f.input :manual %>
+    <%= f.input :purchase_order_number %>
+    <%= f.input :comment %>
+    <%= f.input :type %>
+    <%= f.association :account %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
