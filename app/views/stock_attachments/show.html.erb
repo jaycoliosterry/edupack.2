@@ -1,14 +1,24 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = StockAttachment -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => StockAttachment %></h1>
+</div>
 
-<p>
-  <strong>Stock:</strong>
-  <%= @stock_attachment.stock %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:url) %></dt>
+      <dd><pre class="prettyprint"><%= @stock_attachment.url %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Url:</strong>
-  <%= @stock_attachment.url %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              stock_attachments_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_stock_attachment_path(@stock_attachment), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              stock_attachment_path(@stock_attachment),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<%= link_to 'Edit', edit_stock_attachment_path(@stock_attachment) %> |
-<%= link_to 'Back', stock_attachments_path %>

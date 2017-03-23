@@ -1,6 +1,5 @@
-<h1>Editing stock_attachment</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @stock_attachment %> |
-<%= link_to 'Back', stock_attachments_path %>
+<%- model_class = StockAttachment -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => StockAttachment %></h1>
+</div>
+<%= render :partial => 'form' %>
