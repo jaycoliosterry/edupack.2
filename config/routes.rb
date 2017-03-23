@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :email_templates
+
   resources :user_to_accounts
 
   resources :stock_attachments
