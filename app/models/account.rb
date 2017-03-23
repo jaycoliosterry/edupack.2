@@ -6,4 +6,5 @@ class Account < ActiveRecord::Base
   has_many :user_to_accounts
   has_many :invoices
   has_many :address_groups
+  has_many :account_addresses
 end
