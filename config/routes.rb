@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :invoice_line_items
+
   resources :addresses
 
   resources :order_to_addresses
