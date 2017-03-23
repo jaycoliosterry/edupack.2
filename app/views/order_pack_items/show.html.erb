@@ -1,19 +1,24 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = OrderPackItem -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => OrderPackItem %></h1>
+</div>
 
-<p>
-  <strong>Quantity:</strong>
-  <%= @order_pack_item.quantity %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:quantity) %></dt>
+      <dd><pre class="prettyprint"><%= @order_pack_item.quantity %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Stock:</strong>
-  <%= @order_pack_item.stock %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              order_pack_items_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_order_pack_item_path(@order_pack_item), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              order_pack_item_path(@order_pack_item),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Order:</strong>
-  <%= @order_pack_item.order %>
-</p>
-
-<%= link_to 'Edit', edit_order_pack_item_path(@order_pack_item) %> |
-<%= link_to 'Back', order_pack_items_path %>

@@ -1,5 +1,6 @@
-<h1>New order_pack_item</h1>
+<%- model_class = OrderPackItem -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => OrderPackItem %></h1>
+</div>
+<%= render :partial => 'form' %>
 
-<%= render 'form' %>
-
-<%= link_to 'Back', order_pack_items_path %>

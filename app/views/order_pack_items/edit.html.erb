@@ -1,6 +1,5 @@
-<h1>Editing order_pack_item</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @order_pack_item %> |
-<%= link_to 'Back', order_pack_items_path %>
+<%- model_class = OrderPackItem -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => OrderPackItem %></h1>
+</div>
+<%= render :partial => 'form' %>
