@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @order_pack.weight %>
+</p>
+
+<p>
+  <strong>Width:</strong>
+  <%= @order_pack.width %>
+</p>
+
+<p>
+  <strong>Length:</strong>
+  <%= @order_pack.length %>
+</p>
+
+<p>
+  <strong>Depth:</strong>
+  <%= @order_pack.depth %>
+</p>
+
+<p>
+  <strong>Customs:</strong>
+  <%= @order_pack.customs %>
+</p>
+
+<p>
+  <strong>Customs detail:</strong>
+  <%= @order_pack.customs_detail %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @order_pack.description %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @order_pack.quantity %>
+</p>
+
+<p>
+  <strong>Customs value:</strong>
+  <%= @order_pack.customs_value %>
+</p>
+
+<p>
+  <strong>Cost:</strong>
+  <%= @order_pack.cost %>
+</p>
+
+<p>
+  <strong>Order:</strong>
+  <%= @order_pack.order %>
+</p>
+
+<%= link_to 'Edit', edit_order_pack_path(@order_pack) %> |
+<%= link_to 'Back', order_packs_path %>

@@ -1,0 +1,45 @@
+<h1>Listing order_packs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Weight</th>
+      <th>Width</th>
+      <th>Length</th>
+      <th>Depth</th>
+      <th>Customs</th>
+      <th>Customs detail</th>
+      <th>Description</th>
+      <th>Quantity</th>
+      <th>Customs value</th>
+      <th>Cost</th>
+      <th>Order</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @order_packs.each do |order_pack| %>
+      <tr>
+        <td><%= order_pack.weight %></td>
+        <td><%= order_pack.width %></td>
+        <td><%= order_pack.length %></td>
+        <td><%= order_pack.depth %></td>
+        <td><%= order_pack.customs %></td>
+        <td><%= order_pack.customs_detail %></td>
+        <td><%= order_pack.description %></td>
+        <td><%= order_pack.quantity %></td>
+        <td><%= order_pack.customs_value %></td>
+        <td><%= order_pack.cost %></td>
+        <td><%= order_pack.order %></td>
+        <td><%= link_to 'Show', order_pack %></td>
+        <td><%= link_to 'Edit', edit_order_pack_path(order_pack) %></td>
+        <td><%= link_to 'Destroy', order_pack, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Order pack', new_order_pack_path %>
