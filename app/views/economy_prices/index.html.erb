@@ -1,0 +1,51 @@
+<h1>Listing economy_prices</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Weight</th>
+      <th>Zone1</th>
+      <th>Zone2</th>
+      <th>Zone3</th>
+      <th>Zone4</th>
+      <th>Zone5</th>
+      <th>Zone6</th>
+      <th>Zone7</th>
+      <th>Zone8</th>
+      <th>Zone9</th>
+      <th>Zone10</th>
+      <th>Zone11</th>
+      <th>Zone12</th>
+      <th>Zone13</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @economy_prices.each do |economy_price| %>
+      <tr>
+        <td><%= economy_price.weight %></td>
+        <td><%= economy_price.zone1 %></td>
+        <td><%= economy_price.zone2 %></td>
+        <td><%= economy_price.zone3 %></td>
+        <td><%= economy_price.zone4 %></td>
+        <td><%= economy_price.zone5 %></td>
+        <td><%= economy_price.zone6 %></td>
+        <td><%= economy_price.zone7 %></td>
+        <td><%= economy_price.zone8 %></td>
+        <td><%= economy_price.zone9 %></td>
+        <td><%= economy_price.zone10 %></td>
+        <td><%= economy_price.zone11 %></td>
+        <td><%= economy_price.zone12 %></td>
+        <td><%= economy_price.zone13 %></td>
+        <td><%= link_to 'Show', economy_price %></td>
+        <td><%= link_to 'Edit', edit_economy_price_path(economy_price) %></td>
+        <td><%= link_to 'Destroy', economy_price, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Economy price', new_economy_price_path %>
