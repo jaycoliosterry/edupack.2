@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @stock.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @stock.description %>
+</p>
+
+<p>
+  <strong>Stock level:</strong>
+  <%= @stock.stock_level %>
+</p>
+
+<p>
+  <strong>Storage location:</strong>
+  <%= @stock.storage_location %>
+</p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @stock.weight %>
+</p>
+
+<p>
+  <strong>Width:</strong>
+  <%= @stock.width %>
+</p>
+
+<p>
+  <strong>Length:</strong>
+  <%= @stock.length %>
+</p>
+
+<p>
+  <strong>Depth:</strong>
+  <%= @stock.depth %>
+</p>
+
+<p>
+  <strong>Stock group:</strong>
+  <%= @stock.stock_group %>
+</p>
+
+<p>
+  <strong>Account:</strong>
+  <%= @stock.account %>
+</p>
+
+<%= link_to 'Edit', edit_stock_path(@stock) %> |
+<%= link_to 'Back', stocks_path %>

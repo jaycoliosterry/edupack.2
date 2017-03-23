@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :stocks
+
   resources :account_addresses
 
   resources :address_groups
