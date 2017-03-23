@@ -6,4 +6,5 @@ class Order < ActiveRecord::Base
   has_and_belongs_to_many :addresses
   has_and_belongs_to_many :order_to_addresses
   has_many :order_pack_items
+  has_many :order_packs
 end
