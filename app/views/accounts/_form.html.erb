@@ -1,0 +1,18 @@
+<%= simple_form_for(@account) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :phone %>
+    <%= f.input :website %>
+    <%= f.input :finance_contact_name %>
+    <%= f.input :finance_contact_email %>
+    <%= f.input :description %>
+    <%= f.input :pays_tax %>
+    <%= f.input :pricing_tier %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

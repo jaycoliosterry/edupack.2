@@ -1,0 +1,39 @@
+<h1>Listing accounts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>Website</th>
+      <th>Finance contact name</th>
+      <th>Finance contact email</th>
+      <th>Description</th>
+      <th>Pays tax</th>
+      <th>Pricing tier</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @accounts.each do |account| %>
+      <tr>
+        <td><%= account.name %></td>
+        <td><%= account.phone %></td>
+        <td><%= account.website %></td>
+        <td><%= account.finance_contact_name %></td>
+        <td><%= account.finance_contact_email %></td>
+        <td><%= account.description %></td>
+        <td><%= account.pays_tax %></td>
+        <td><%= account.pricing_tier %></td>
+        <td><%= link_to 'Show', account %></td>
+        <td><%= link_to 'Edit', edit_account_path(account) %></td>
+        <td><%= link_to 'Destroy', account, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Account', new_account_path %>

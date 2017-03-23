@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @account.name %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @account.phone %>
+</p>
+
+<p>
+  <strong>Website:</strong>
+  <%= @account.website %>
+</p>
+
+<p>
+  <strong>Finance contact name:</strong>
+  <%= @account.finance_contact_name %>
+</p>
+
+<p>
+  <strong>Finance contact email:</strong>
+  <%= @account.finance_contact_email %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @account.description %>
+</p>
+
+<p>
+  <strong>Pays tax:</strong>
+  <%= @account.pays_tax %>
+</p>
+
+<p>
+  <strong>Pricing tier:</strong>
+  <%= @account.pricing_tier %>
+</p>
+
+<%= link_to 'Edit', edit_account_path(@account) %> |
+<%= link_to 'Back', accounts_path %>
