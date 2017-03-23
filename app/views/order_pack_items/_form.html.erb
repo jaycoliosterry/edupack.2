@@ -1,0 +1,13 @@
+<%= simple_form_for(@order_pack_item) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :quantity %>
+    <%= f.association :stock %>
+    <%= f.association :order %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
