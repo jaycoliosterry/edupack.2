@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @address_group.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @address_group.description %>
+</p>
+
+<p>
+  <strong>Account:</strong>
+  <%= @address_group.account %>
+</p>
+
+<%= link_to 'Edit', edit_address_group_path(@address_group) %> |
+<%= link_to 'Back', address_groups_path %>

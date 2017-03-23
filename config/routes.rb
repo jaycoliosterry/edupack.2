@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :address_groups
+
   resources :order_pack_items
 
   resources :order_packs

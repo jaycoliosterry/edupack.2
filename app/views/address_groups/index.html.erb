@@ -1,0 +1,29 @@
+<h1>Listing address_groups</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Account</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @address_groups.each do |address_group| %>
+      <tr>
+        <td><%= address_group.name %></td>
+        <td><%= address_group.description %></td>
+        <td><%= address_group.account %></td>
+        <td><%= link_to 'Show', address_group %></td>
+        <td><%= link_to 'Edit', edit_address_group_path(address_group) %></td>
+        <td><%= link_to 'Destroy', address_group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Address group', new_address_group_path %>
