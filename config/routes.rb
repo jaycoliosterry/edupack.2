@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :addresses
+
   resources :order_to_addresses
 
   resources :express_prices
