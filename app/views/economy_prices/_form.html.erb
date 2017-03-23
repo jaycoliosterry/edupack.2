@@ -1,24 +1,94 @@
-<%= simple_form_for(@economy_price) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :weight %>
-    <%= f.input :zone1 %>
-    <%= f.input :zone2 %>
-    <%= f.input :zone3 %>
-    <%= f.input :zone4 %>
-    <%= f.input :zone5 %>
-    <%= f.input :zone6 %>
-    <%= f.input :zone7 %>
-    <%= f.input :zone8 %>
-    <%= f.input :zone9 %>
-    <%= f.input :zone10 %>
-    <%= f.input :zone11 %>
-    <%= f.input :zone12 %>
-    <%= f.input :zone13 %>
+<%= form_for @economy_price, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :weight, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :weight, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :zone1, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :zone1, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :zone2, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :zone2, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :zone3, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :zone3, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :zone4, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :zone4, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :zone5, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :zone5, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :zone6, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :zone6, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :zone7, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :zone7, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :zone8, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :zone8, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :zone9, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :zone9, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :zone10, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :zone10, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :zone11, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :zone11, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :zone12, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :zone12, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :zone13, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :zone13, :class => 'text-field form-control' %>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  economy_prices_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>

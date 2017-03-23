@@ -1,74 +1,50 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = EconomyPrice -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => EconomyPrice %></h1>
+</div>
 
-<p>
-  <strong>Weight:</strong>
-  <%= @economy_price.weight %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:weight) %></dt>
+      <dd><pre class="prettyprint"><%= @economy_price.weight %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:zone1) %></dt>
+      <dd><pre class="prettyprint"><%= @economy_price.zone1 %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:zone2) %></dt>
+      <dd><pre class="prettyprint"><%= @economy_price.zone2 %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:zone3) %></dt>
+      <dd><pre class="prettyprint"><%= @economy_price.zone3 %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:zone4) %></dt>
+      <dd><pre class="prettyprint"><%= @economy_price.zone4 %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:zone5) %></dt>
+      <dd><pre class="prettyprint"><%= @economy_price.zone5 %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:zone6) %></dt>
+      <dd><pre class="prettyprint"><%= @economy_price.zone6 %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:zone7) %></dt>
+      <dd><pre class="prettyprint"><%= @economy_price.zone7 %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:zone8) %></dt>
+      <dd><pre class="prettyprint"><%= @economy_price.zone8 %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:zone9) %></dt>
+      <dd><pre class="prettyprint"><%= @economy_price.zone9 %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:zone10) %></dt>
+      <dd><pre class="prettyprint"><%= @economy_price.zone10 %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:zone11) %></dt>
+      <dd><pre class="prettyprint"><%= @economy_price.zone11 %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:zone12) %></dt>
+      <dd><pre class="prettyprint"><%= @economy_price.zone12 %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:zone13) %></dt>
+      <dd><pre class="prettyprint"><%= @economy_price.zone13 %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Zone1:</strong>
-  <%= @economy_price.zone1 %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              economy_prices_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_economy_price_path(@economy_price), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              economy_price_path(@economy_price),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Zone2:</strong>
-  <%= @economy_price.zone2 %>
-</p>
-
-<p>
-  <strong>Zone3:</strong>
-  <%= @economy_price.zone3 %>
-</p>
-
-<p>
-  <strong>Zone4:</strong>
-  <%= @economy_price.zone4 %>
-</p>
-
-<p>
-  <strong>Zone5:</strong>
-  <%= @economy_price.zone5 %>
-</p>
-
-<p>
-  <strong>Zone6:</strong>
-  <%= @economy_price.zone6 %>
-</p>
-
-<p>
-  <strong>Zone7:</strong>
-  <%= @economy_price.zone7 %>
-</p>
-
-<p>
-  <strong>Zone8:</strong>
-  <%= @economy_price.zone8 %>
-</p>
-
-<p>
-  <strong>Zone9:</strong>
-  <%= @economy_price.zone9 %>
-</p>
-
-<p>
-  <strong>Zone10:</strong>
-  <%= @economy_price.zone10 %>
-</p>
-
-<p>
-  <strong>Zone11:</strong>
-  <%= @economy_price.zone11 %>
-</p>
-
-<p>
-  <strong>Zone12:</strong>
-  <%= @economy_price.zone12 %>
-</p>
-
-<p>
-  <strong>Zone13:</strong>
-  <%= @economy_price.zone13 %>
-</p>
-
-<%= link_to 'Edit', edit_economy_price_path(@economy_price) %> |
-<%= link_to 'Back', economy_prices_path %>
