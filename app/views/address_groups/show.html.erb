@@ -1,19 +1,26 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = AddressGroup -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => AddressGroup %></h1>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @address_group.name %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:name) %></dt>
+      <dd><pre class="prettyprint"><%= @address_group.name %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:description) %></dt>
+      <dd><pre class="prettyprint"><%= @address_group.description %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @address_group.description %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              address_groups_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_address_group_path(@address_group), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              address_group_path(@address_group),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Account:</strong>
-  <%= @address_group.account %>
-</p>
-
-<%= link_to 'Edit', edit_address_group_path(@address_group) %> |
-<%= link_to 'Back', address_groups_path %>

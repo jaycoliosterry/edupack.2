@@ -1,6 +1,5 @@
-<h1>Editing address_group</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @address_group %> |
-<%= link_to 'Back', address_groups_path %>
+<%- model_class = AddressGroup -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => AddressGroup %></h1>
+</div>
+<%= render :partial => 'form' %>
