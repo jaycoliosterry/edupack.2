@@ -1,18 +1,58 @@
-<%= simple_form_for(@account) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :phone %>
-    <%= f.input :website %>
-    <%= f.input :finance_contact_name %>
-    <%= f.input :finance_contact_email %>
-    <%= f.input :description %>
-    <%= f.input :pays_tax %>
-    <%= f.input :pricing_tier %>
+<%= form_for @account, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :name, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :name, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :phone, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :phone, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :website, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :website, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :finance_contact_name, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :finance_contact_name, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :finance_contact_email, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :finance_contact_email, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :description, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :description, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :pays_tax, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.check_box :pays_tax, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :pricing_tier, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :pricing_tier, :class => 'text-field form-control' %>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  accounts_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>
