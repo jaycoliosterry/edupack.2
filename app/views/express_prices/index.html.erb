@@ -1,29 +1,33 @@
-<h1>Listing express_prices</h1>
-
-<table>
+<%- model_class = ExpressPrice -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => ExpressPrice %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Weight</th>
-      <th>Zone1</th>
-      <th>Zone2</th>
-      <th>Zone3</th>
-      <th>Zone4</th>
-      <th>Zone5</th>
-      <th>Zone6</th>
-      <th>Zone7</th>
-      <th>Zone8</th>
-      <th>Zone9</th>
-      <th>Zone10</th>
-      <th>Zone11</th>
-      <th>Zone12</th>
-      <th>Zone13</th>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:weight) %></th>
+      <th><%= model_class.human_attribute_name(:zone1) %></th>
+      <th><%= model_class.human_attribute_name(:zone2) %></th>
+      <th><%= model_class.human_attribute_name(:zone3) %></th>
+      <th><%= model_class.human_attribute_name(:zone4) %></th>
+      <th><%= model_class.human_attribute_name(:zone5) %></th>
+      <th><%= model_class.human_attribute_name(:zone6) %></th>
+      <th><%= model_class.human_attribute_name(:zone7) %></th>
+      <th><%= model_class.human_attribute_name(:zone8) %></th>
+      <th><%= model_class.human_attribute_name(:zone9) %></th>
+      <th><%= model_class.human_attribute_name(:zone10) %></th>
+      <th><%= model_class.human_attribute_name(:zone11) %></th>
+      <th><%= model_class.human_attribute_name(:zone12) %></th>
+      <th><%= model_class.human_attribute_name(:zone13) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @express_prices.each do |express_price| %>
       <tr>
+        <td><%= express_price.id %></td>
         <td><%= express_price.weight %></td>
         <td><%= express_price.zone1 %></td>
         <td><%= express_price.zone2 %></td>
@@ -38,14 +42,21 @@
         <td><%= express_price.zone11 %></td>
         <td><%= express_price.zone12 %></td>
         <td><%= express_price.zone13 %></td>
-        <td><%= link_to 'Show', express_price %></td>
-        <td><%= link_to 'Edit', edit_express_price_path(express_price) %></td>
-        <td><%= link_to 'Destroy', express_price, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l express_price.created_at, format: :long %></td>
+        <td>
+          <%= link_to express_price_path(express_price), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to express_price_path(express_price), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Express price', new_express_price_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_express_price_path,
+            :class => 'btn btn-primary' %>
