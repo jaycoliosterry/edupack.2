@@ -1,6 +1,5 @@
-<h1>Editing order_to_address</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @order_to_address %> |
-<%= link_to 'Back', order_to_addresses_path %>
+<%- model_class = OrderToAddress -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => OrderToAddress %></h1>
+</div>
+<%= render :partial => 'form' %>
