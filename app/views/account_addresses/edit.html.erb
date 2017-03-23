@@ -1,6 +1,5 @@
-<h1>Editing account_address</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @account_address %> |
-<%= link_to 'Back', account_addresses_path %>
+<%- model_class = AccountAddress -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => AccountAddress %></h1>
+</div>
+<%= render :partial => 'form' %>

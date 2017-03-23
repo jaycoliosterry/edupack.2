@@ -1,25 +1,28 @@
-<h1>Listing account_addresses</h1>
-
-<table>
+<%- model_class = AccountAddress -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => AccountAddress %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Address1</th>
-      <th>Address2</th>
-      <th>Address3</th>
-      <th>Address4</th>
-      <th>Country</th>
-      <th>Postcode</th>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Telephone</th>
-      <th>Account</th>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:address1) %></th>
+      <th><%= model_class.human_attribute_name(:address2) %></th>
+      <th><%= model_class.human_attribute_name(:address3) %></th>
+      <th><%= model_class.human_attribute_name(:address4) %></th>
+      <th><%= model_class.human_attribute_name(:country) %></th>
+      <th><%= model_class.human_attribute_name(:postcode) %></th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:email) %></th>
+      <th><%= model_class.human_attribute_name(:telephone) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @account_addresses.each do |account_address| %>
       <tr>
+        <td><%= account_address.id %></td>
         <td><%= account_address.address1 %></td>
         <td><%= account_address.address2 %></td>
         <td><%= account_address.address3 %></td>
@@ -29,15 +32,21 @@
         <td><%= account_address.name %></td>
         <td><%= account_address.email %></td>
         <td><%= account_address.telephone %></td>
-        <td><%= account_address.account %></td>
-        <td><%= link_to 'Show', account_address %></td>
-        <td><%= link_to 'Edit', edit_account_address_path(account_address) %></td>
-        <td><%= link_to 'Destroy', account_address, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l account_address.created_at, format: :long %></td>
+        <td>
+          <%= link_to account_address_path(account_address), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to account_address_path(account_address), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Account address', new_account_address_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_account_address_path,
+            :class => 'btn btn-primary' %>
