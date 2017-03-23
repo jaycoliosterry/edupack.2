@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :stock_attachments
+
   resources :accounts
 
   resources :stock_groups

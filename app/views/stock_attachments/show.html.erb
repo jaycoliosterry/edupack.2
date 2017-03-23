@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Stock:</strong>
+  <%= @stock_attachment.stock %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @stock_attachment.url %>
+</p>
+
+<%= link_to 'Edit', edit_stock_attachment_path(@stock_attachment) %> |
+<%= link_to 'Back', stock_attachments_path %>
