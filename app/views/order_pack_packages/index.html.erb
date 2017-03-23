@@ -1,0 +1,41 @@
+<h1>Listing order_pack_packages</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Origin</th>
+      <th>Destination</th>
+      <th>Status</th>
+      <th>History</th>
+      <th>Waybill</th>
+      <th>Total pieces</th>
+      <th>Piece</th>
+      <th>Order</th>
+      <th>Order pack</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @order_pack_packages.each do |order_pack_package| %>
+      <tr>
+        <td><%= order_pack_package.origin %></td>
+        <td><%= order_pack_package.destination %></td>
+        <td><%= order_pack_package.status %></td>
+        <td><%= order_pack_package.history %></td>
+        <td><%= order_pack_package.waybill %></td>
+        <td><%= order_pack_package.total_pieces %></td>
+        <td><%= order_pack_package.piece %></td>
+        <td><%= order_pack_package.order %></td>
+        <td><%= order_pack_package.order_pack %></td>
+        <td><%= link_to 'Show', order_pack_package %></td>
+        <td><%= link_to 'Edit', edit_order_pack_package_path(order_pack_package) %></td>
+        <td><%= link_to 'Destroy', order_pack_package, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Order pack package', new_order_pack_package_path %>

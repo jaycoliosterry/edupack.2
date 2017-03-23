@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Origin:</strong>
+  <%= @order_pack_package.origin %>
+</p>
+
+<p>
+  <strong>Destination:</strong>
+  <%= @order_pack_package.destination %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @order_pack_package.status %>
+</p>
+
+<p>
+  <strong>History:</strong>
+  <%= @order_pack_package.history %>
+</p>
+
+<p>
+  <strong>Waybill:</strong>
+  <%= @order_pack_package.waybill %>
+</p>
+
+<p>
+  <strong>Total pieces:</strong>
+  <%= @order_pack_package.total_pieces %>
+</p>
+
+<p>
+  <strong>Piece:</strong>
+  <%= @order_pack_package.piece %>
+</p>
+
+<p>
+  <strong>Order:</strong>
+  <%= @order_pack_package.order %>
+</p>
+
+<p>
+  <strong>Order pack:</strong>
+  <%= @order_pack_package.order_pack %>
+</p>
+
+<%= link_to 'Edit', edit_order_pack_package_path(@order_pack_package) %> |
+<%= link_to 'Back', order_pack_packages_path %>
