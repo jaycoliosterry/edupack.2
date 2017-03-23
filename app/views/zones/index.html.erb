@@ -1,33 +1,44 @@
-<h1>Listing zones</h1>
-
-<table>
+<%- model_class = Zone -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Zone %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Country</th>
-      <th>Zone</th>
-      <th>Expresstime</th>
-      <th>Economytime</th>
-      <th>Iva</th>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:country) %></th>
+      <th><%= model_class.human_attribute_name(:zone) %></th>
+      <th><%= model_class.human_attribute_name(:expresstime) %></th>
+      <th><%= model_class.human_attribute_name(:economytime) %></th>
+      <th><%= model_class.human_attribute_name(:iva) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @zones.each do |zone| %>
       <tr>
+        <td><%= zone.id %></td>
         <td><%= zone.country %></td>
         <td><%= zone.zone %></td>
         <td><%= zone.expresstime %></td>
         <td><%= zone.economytime %></td>
         <td><%= zone.iva %></td>
-        <td><%= link_to 'Show', zone %></td>
-        <td><%= link_to 'Edit', edit_zone_path(zone) %></td>
-        <td><%= link_to 'Destroy', zone, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l zone.created_at, format: :long %></td>
+        <td>
+          <%= link_to zone_path(zone), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to zone_path(zone), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Zone', new_zone_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_zone_path,
+            :class => 'btn btn-primary' %>

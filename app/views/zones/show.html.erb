@@ -1,29 +1,32 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Zone -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Zone %></h1>
+</div>
 
-<p>
-  <strong>Country:</strong>
-  <%= @zone.country %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:country) %></dt>
+      <dd><pre class="prettyprint"><%= @zone.country %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:zone) %></dt>
+      <dd><pre class="prettyprint"><%= @zone.zone %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:expresstime) %></dt>
+      <dd><pre class="prettyprint"><%= @zone.expresstime %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:economytime) %></dt>
+      <dd><pre class="prettyprint"><%= @zone.economytime %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:iva) %></dt>
+      <dd><pre class="prettyprint"><%= @zone.iva %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Zone:</strong>
-  <%= @zone.zone %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              zones_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_zone_path(@zone), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              zone_path(@zone),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Expresstime:</strong>
-  <%= @zone.expresstime %>
-</p>
-
-<p>
-  <strong>Economytime:</strong>
-  <%= @zone.economytime %>
-</p>
-
-<p>
-  <strong>Iva:</strong>
-  <%= @zone.iva %>
-</p>
-
-<%= link_to 'Edit', edit_zone_path(@zone) %> |
-<%= link_to 'Back', zones_path %>
