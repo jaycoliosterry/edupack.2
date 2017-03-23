@@ -1,0 +1,29 @@
+<h1>Listing stock_groups</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Account</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @stock_groups.each do |stock_group| %>
+      <tr>
+        <td><%= stock_group.name %></td>
+        <td><%= stock_group.description %></td>
+        <td><%= stock_group.account %></td>
+        <td><%= link_to 'Show', stock_group %></td>
+        <td><%= link_to 'Edit', edit_stock_group_path(stock_group) %></td>
+        <td><%= link_to 'Destroy', stock_group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Stock group', new_stock_group_path %>
