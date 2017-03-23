@@ -5,4 +5,5 @@ class Order < ActiveRecord::Base
   belongs_to :invoice_line_item
   has_and_belongs_to_many :addresses
   has_and_belongs_to_many :order_to_addresses
+  has_many :order_pack_items
 end
