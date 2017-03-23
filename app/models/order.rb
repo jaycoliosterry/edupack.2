@@ -8,4 +8,5 @@ class Order < ActiveRecord::Base
   has_many :order_pack_items
   has_many :order_packs
   has_one :order_attachment
+  has_many :order_pack_packages
 end
