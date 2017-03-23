@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @zone.country %>
+</p>
+
+<p>
+  <strong>Zone:</strong>
+  <%= @zone.zone %>
+</p>
+
+<p>
+  <strong>Expresstime:</strong>
+  <%= @zone.expresstime %>
+</p>
+
+<p>
+  <strong>Economytime:</strong>
+  <%= @zone.economytime %>
+</p>
+
+<p>
+  <strong>Iva:</strong>
+  <%= @zone.iva %>
+</p>
+
+<%= link_to 'Edit', edit_zone_path(@zone) %> |
+<%= link_to 'Back', zones_path %>

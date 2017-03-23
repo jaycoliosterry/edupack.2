@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :zones
+
   resources :economy_prices
 
   resources :order_attachments

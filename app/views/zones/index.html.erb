@@ -1,0 +1,33 @@
+<h1>Listing zones</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Country</th>
+      <th>Zone</th>
+      <th>Expresstime</th>
+      <th>Economytime</th>
+      <th>Iva</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @zones.each do |zone| %>
+      <tr>
+        <td><%= zone.country %></td>
+        <td><%= zone.zone %></td>
+        <td><%= zone.expresstime %></td>
+        <td><%= zone.economytime %></td>
+        <td><%= zone.iva %></td>
+        <td><%= link_to 'Show', zone %></td>
+        <td><%= link_to 'Edit', edit_zone_path(zone) %></td>
+        <td><%= link_to 'Destroy', zone, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Zone', new_zone_path %>
