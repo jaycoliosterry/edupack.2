@@ -1,26 +1,29 @@
-<h1>Listing order_packs</h1>
-
-<table>
+<%- model_class = OrderPack -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => OrderPack %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Weight</th>
-      <th>Width</th>
-      <th>Length</th>
-      <th>Depth</th>
-      <th>Customs</th>
-      <th>Customs detail</th>
-      <th>Description</th>
-      <th>Quantity</th>
-      <th>Customs value</th>
-      <th>Cost</th>
-      <th>Order</th>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:weight) %></th>
+      <th><%= model_class.human_attribute_name(:width) %></th>
+      <th><%= model_class.human_attribute_name(:length) %></th>
+      <th><%= model_class.human_attribute_name(:depth) %></th>
+      <th><%= model_class.human_attribute_name(:customs) %></th>
+      <th><%= model_class.human_attribute_name(:customs_detail) %></th>
+      <th><%= model_class.human_attribute_name(:description) %></th>
+      <th><%= model_class.human_attribute_name(:quantity) %></th>
+      <th><%= model_class.human_attribute_name(:customs_value) %></th>
+      <th><%= model_class.human_attribute_name(:cost) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @order_packs.each do |order_pack| %>
       <tr>
+        <td><%= order_pack.id %></td>
         <td><%= order_pack.weight %></td>
         <td><%= order_pack.width %></td>
         <td><%= order_pack.length %></td>
@@ -31,15 +34,21 @@
         <td><%= order_pack.quantity %></td>
         <td><%= order_pack.customs_value %></td>
         <td><%= order_pack.cost %></td>
-        <td><%= order_pack.order %></td>
-        <td><%= link_to 'Show', order_pack %></td>
-        <td><%= link_to 'Edit', edit_order_pack_path(order_pack) %></td>
-        <td><%= link_to 'Destroy', order_pack, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l order_pack.created_at, format: :long %></td>
+        <td>
+          <%= link_to order_pack_path(order_pack), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to order_pack_path(order_pack), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Order pack', new_order_pack_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_order_pack_path,
+            :class => 'btn btn-primary' %>

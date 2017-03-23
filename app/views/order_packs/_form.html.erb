@@ -1,21 +1,70 @@
-<%= simple_form_for(@order_pack) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :weight %>
-    <%= f.input :width %>
-    <%= f.input :length %>
-    <%= f.input :depth %>
-    <%= f.input :customs %>
-    <%= f.input :customs_detail %>
-    <%= f.input :description %>
-    <%= f.input :quantity %>
-    <%= f.input :customs_value %>
-    <%= f.input :cost %>
-    <%= f.association :order %>
+<%= form_for @order_pack, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :weight, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :weight, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :width, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :width, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :length, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :length, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :depth, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :depth, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :customs, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :customs, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :customs_detail, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :customs_detail, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :description, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :description, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :quantity, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :quantity, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :customs_value, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :customs_value, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :cost, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :cost, :class => 'text-field form-control' %>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  order_packs_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>

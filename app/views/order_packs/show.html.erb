@@ -1,59 +1,42 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = OrderPack -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => OrderPack %></h1>
+</div>
 
-<p>
-  <strong>Weight:</strong>
-  <%= @order_pack.weight %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:weight) %></dt>
+      <dd><pre class="prettyprint"><%= @order_pack.weight %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:width) %></dt>
+      <dd><pre class="prettyprint"><%= @order_pack.width %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:length) %></dt>
+      <dd><pre class="prettyprint"><%= @order_pack.length %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:depth) %></dt>
+      <dd><pre class="prettyprint"><%= @order_pack.depth %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:customs) %></dt>
+      <dd><pre class="prettyprint"><%= @order_pack.customs %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:customs_detail) %></dt>
+      <dd><pre class="prettyprint"><%= @order_pack.customs_detail %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:description) %></dt>
+      <dd><pre class="prettyprint"><%= @order_pack.description %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:quantity) %></dt>
+      <dd><pre class="prettyprint"><%= @order_pack.quantity %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:customs_value) %></dt>
+      <dd><pre class="prettyprint"><%= @order_pack.customs_value %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:cost) %></dt>
+      <dd><pre class="prettyprint"><%= @order_pack.cost %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Width:</strong>
-  <%= @order_pack.width %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              order_packs_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_order_pack_path(@order_pack), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              order_pack_path(@order_pack),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Length:</strong>
-  <%= @order_pack.length %>
-</p>
-
-<p>
-  <strong>Depth:</strong>
-  <%= @order_pack.depth %>
-</p>
-
-<p>
-  <strong>Customs:</strong>
-  <%= @order_pack.customs %>
-</p>
-
-<p>
-  <strong>Customs detail:</strong>
-  <%= @order_pack.customs_detail %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @order_pack.description %>
-</p>
-
-<p>
-  <strong>Quantity:</strong>
-  <%= @order_pack.quantity %>
-</p>
-
-<p>
-  <strong>Customs value:</strong>
-  <%= @order_pack.customs_value %>
-</p>
-
-<p>
-  <strong>Cost:</strong>
-  <%= @order_pack.cost %>
-</p>
-
-<p>
-  <strong>Order:</strong>
-  <%= @order_pack.order %>
-</p>
-
-<%= link_to 'Edit', edit_order_pack_path(@order_pack) %> |
-<%= link_to 'Back', order_packs_path %>
