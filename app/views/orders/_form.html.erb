@@ -1,0 +1,26 @@
+<%= simple_form_for(@order) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :error %>
+    <%= f.input :description %>
+    <%= f.input :total_cost %>
+    <%= f.input :tax %>
+    <%= f.input :cost %>
+    <%= f.input :type %>
+    <%= f.input :notify_me %>
+    <%= f.input :notify_receiver %>
+    <%= f.input :deliver_by %>
+    <%= f.input :batch %>
+    <%= f.input :status %>
+    <%= f.input :service %>
+    <%= f.association :account %>
+    <%= f.association :invoice %>
+    <%= f.association :user %>
+    <%= f.association :invoice_line_item %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

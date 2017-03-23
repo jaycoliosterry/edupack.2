@@ -1,0 +1,55 @@
+<h1>Listing orders</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Error</th>
+      <th>Description</th>
+      <th>Total cost</th>
+      <th>Tax</th>
+      <th>Cost</th>
+      <th>Type</th>
+      <th>Notify me</th>
+      <th>Notify receiver</th>
+      <th>Deliver by</th>
+      <th>Batch</th>
+      <th>Status</th>
+      <th>Service</th>
+      <th>Account</th>
+      <th>Invoice</th>
+      <th>User</th>
+      <th>Invoice line item</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr>
+        <td><%= order.error %></td>
+        <td><%= order.description %></td>
+        <td><%= order.total_cost %></td>
+        <td><%= order.tax %></td>
+        <td><%= order.cost %></td>
+        <td><%= order.type %></td>
+        <td><%= order.notify_me %></td>
+        <td><%= order.notify_receiver %></td>
+        <td><%= order.deliver_by %></td>
+        <td><%= order.batch %></td>
+        <td><%= order.status %></td>
+        <td><%= order.service %></td>
+        <td><%= order.account %></td>
+        <td><%= order.invoice %></td>
+        <td><%= order.user %></td>
+        <td><%= order.invoice_line_item %></td>
+        <td><%= link_to 'Show', order %></td>
+        <td><%= link_to 'Edit', edit_order_path(order) %></td>
+        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Order', new_order_path %>
