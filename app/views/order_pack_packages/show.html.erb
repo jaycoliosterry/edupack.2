@@ -1,49 +1,36 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = OrderPackPackage -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => OrderPackPackage %></h1>
+</div>
 
-<p>
-  <strong>Origin:</strong>
-  <%= @order_pack_package.origin %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:origin) %></dt>
+      <dd><pre class="prettyprint"><%= @order_pack_package.origin %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:destination) %></dt>
+      <dd><pre class="prettyprint"><%= @order_pack_package.destination %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:status) %></dt>
+      <dd><pre class="prettyprint"><%= @order_pack_package.status %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:history) %></dt>
+      <dd><pre class="prettyprint"><%= @order_pack_package.history %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:waybill) %></dt>
+      <dd><pre class="prettyprint"><%= @order_pack_package.waybill %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:total_pieces) %></dt>
+      <dd><pre class="prettyprint"><%= @order_pack_package.total_pieces %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:piece) %></dt>
+      <dd><pre class="prettyprint"><%= @order_pack_package.piece %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Destination:</strong>
-  <%= @order_pack_package.destination %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              order_pack_packages_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_order_pack_package_path(@order_pack_package), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              order_pack_package_path(@order_pack_package),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Status:</strong>
-  <%= @order_pack_package.status %>
-</p>
-
-<p>
-  <strong>History:</strong>
-  <%= @order_pack_package.history %>
-</p>
-
-<p>
-  <strong>Waybill:</strong>
-  <%= @order_pack_package.waybill %>
-</p>
-
-<p>
-  <strong>Total pieces:</strong>
-  <%= @order_pack_package.total_pieces %>
-</p>
-
-<p>
-  <strong>Piece:</strong>
-  <%= @order_pack_package.piece %>
-</p>
-
-<p>
-  <strong>Order:</strong>
-  <%= @order_pack_package.order %>
-</p>
-
-<p>
-  <strong>Order pack:</strong>
-  <%= @order_pack_package.order_pack %>
-</p>
-
-<%= link_to 'Edit', edit_order_pack_package_path(@order_pack_package) %> |
-<%= link_to 'Back', order_pack_packages_path %>
