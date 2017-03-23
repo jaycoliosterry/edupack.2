@@ -1,0 +1,51 @@
+<h1>Listing express_prices</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Weight</th>
+      <th>Zone1</th>
+      <th>Zone2</th>
+      <th>Zone3</th>
+      <th>Zone4</th>
+      <th>Zone5</th>
+      <th>Zone6</th>
+      <th>Zone7</th>
+      <th>Zone8</th>
+      <th>Zone9</th>
+      <th>Zone10</th>
+      <th>Zone11</th>
+      <th>Zone12</th>
+      <th>Zone13</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @express_prices.each do |express_price| %>
+      <tr>
+        <td><%= express_price.weight %></td>
+        <td><%= express_price.zone1 %></td>
+        <td><%= express_price.zone2 %></td>
+        <td><%= express_price.zone3 %></td>
+        <td><%= express_price.zone4 %></td>
+        <td><%= express_price.zone5 %></td>
+        <td><%= express_price.zone6 %></td>
+        <td><%= express_price.zone7 %></td>
+        <td><%= express_price.zone8 %></td>
+        <td><%= express_price.zone9 %></td>
+        <td><%= express_price.zone10 %></td>
+        <td><%= express_price.zone11 %></td>
+        <td><%= express_price.zone12 %></td>
+        <td><%= express_price.zone13 %></td>
+        <td><%= link_to 'Show', express_price %></td>
+        <td><%= link_to 'Edit', edit_express_price_path(express_price) %></td>
+        <td><%= link_to 'Destroy', express_price, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Express price', new_express_price_path %>
