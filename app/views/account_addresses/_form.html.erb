@@ -1,0 +1,20 @@
+<%= simple_form_for(@account_address) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :address1 %>
+    <%= f.input :address2 %>
+    <%= f.input :address3 %>
+    <%= f.input :address4 %>
+    <%= f.input :country %>
+    <%= f.input :postcode %>
+    <%= f.input :name %>
+    <%= f.input :email %>
+    <%= f.input :telephone %>
+    <%= f.association :account %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

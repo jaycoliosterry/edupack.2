@@ -1,0 +1,43 @@
+<h1>Listing account_addresses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Address1</th>
+      <th>Address2</th>
+      <th>Address3</th>
+      <th>Address4</th>
+      <th>Country</th>
+      <th>Postcode</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Telephone</th>
+      <th>Account</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @account_addresses.each do |account_address| %>
+      <tr>
+        <td><%= account_address.address1 %></td>
+        <td><%= account_address.address2 %></td>
+        <td><%= account_address.address3 %></td>
+        <td><%= account_address.address4 %></td>
+        <td><%= account_address.country %></td>
+        <td><%= account_address.postcode %></td>
+        <td><%= account_address.name %></td>
+        <td><%= account_address.email %></td>
+        <td><%= account_address.telephone %></td>
+        <td><%= account_address.account %></td>
+        <td><%= link_to 'Show', account_address %></td>
+        <td><%= link_to 'Edit', edit_account_address_path(account_address) %></td>
+        <td><%= link_to 'Destroy', account_address, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Account address', new_account_address_path %>

@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Address1:</strong>
+  <%= @account_address.address1 %>
+</p>
+
+<p>
+  <strong>Address2:</strong>
+  <%= @account_address.address2 %>
+</p>
+
+<p>
+  <strong>Address3:</strong>
+  <%= @account_address.address3 %>
+</p>
+
+<p>
+  <strong>Address4:</strong>
+  <%= @account_address.address4 %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @account_address.country %>
+</p>
+
+<p>
+  <strong>Postcode:</strong>
+  <%= @account_address.postcode %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @account_address.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @account_address.email %>
+</p>
+
+<p>
+  <strong>Telephone:</strong>
+  <%= @account_address.telephone %>
+</p>
+
+<p>
+  <strong>Account:</strong>
+  <%= @account_address.account %>
+</p>
+
+<%= link_to 'Edit', edit_account_address_path(@account_address) %> |
+<%= link_to 'Back', account_addresses_path %>
